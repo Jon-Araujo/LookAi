@@ -38,7 +38,7 @@ export default function Home() {
       <p className="ml-12 text-2xl font-semibold">Categorias:</p>
       <ul className="grid grid-cols-2 gap-12 mt-8 w-1/2 mx-auto">
         <li className="relative aspect-square max-w-[360px] size-124 overflow-hidden rounded-xl group">
-          <Link href="#">
+          <Link href="/produtos/homens">
             <Image
               src="/categories/homens.png"
               fill
@@ -51,7 +51,7 @@ export default function Home() {
           </Link>
         </li>
         <li className="relative aspect-square max-w-[360px] size-124 overflow-hidden rounded-xl group">
-          <Link href="#">
+          <Link href="/produtos/calcados">
             <Image
               src="/categories/calcados.png"
               fill
@@ -64,7 +64,7 @@ export default function Home() {
           </Link>
         </li>
         <li className="relative aspect-square max-w-[360px] size-124 overflow-hidden rounded-xl group">
-          <Link href="#">
+          <Link href="/produtos/esporte">
             <Image
               src="/categories/esporte.png"
               fill
@@ -77,7 +77,7 @@ export default function Home() {
           </Link>
         </li>
         <li className="relative aspect-square max-w-[360px] size-124 overflow-hidden rounded-xl group">
-          <Link href="#">
+          <Link href="/produtos/mulheres">
             <Image
               src="/categories/mulheres.png"
               fill

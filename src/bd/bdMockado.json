@@ -1,0 +1,362 @@
+[
+  {
+    "nome": "Camiseta Nike Sportswear Club",
+    "preço": 129.99,
+    "sku": "NK-CS-001",
+    "src": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "homens",
+    "mais_procurados": true
+  },
+  {
+    "nome": "Tênis Adidas Ultraboost 22",
+    "preço": 799.99,
+    "sku": "AD-TN-002",
+    "src": "https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "calçados",
+    "mais_procurados": true
+  },
+  {
+    "nome": "Calça de Moletom Puma Essentials",
+    "preço": 249.99,
+    "sku": "PM-CA-003",
+    "src": "https://images.unsplash.com/photo-1596759089065-27a96a30c510?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "mulheres",
+    "mais_procurados": true
+  },
+  {
+    "nome": "Jaqueta Nike Windrunner",
+    "preço": 499.99,
+    "sku": "NK-JQ-004",
+    "src": "https://images.unsplash.com/photo-1601924638865-c72054ff050c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "esporte",
+    "mais_procurados": true
+  },
+  {
+    "nome": "Camiseta Adidas Trefoil",
+    "preço": 149.99,
+    "sku": "AD-CS-005",
+    "src": "https://images.unsplash.com/photo-1521572178392-e4d6d6b5e0f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "homens",
+    "mais_procurados": true
+  },
+  {
+    "nome": "Legging Puma Essentials Logo",
+    "preço": 169.99,
+    "sku": "PM-LG-006",
+    "src": "https://images.unsplash.com/photo-1610416399996-5f75f726a422?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "mulheres",
+    "mais_procurados": true
+  },
+  {
+    "nome": "Shorts de Corrida Nike Challenger",
+    "preço": 199.99,
+    "sku": "NK-SH-007",
+    "src": "https://images.unsplash.com/photo-1579730606994-3993393963f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "esporte",
+    "mais_procurados": true
+  },
+  {
+    "nome": "Tênis Adidas Superstar",
+    "preço": 449.99,
+    "sku": "AD-TN-008",
+    "src": "https://images.unsplash.com/photo-1549298828-566b61be4689?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "calçados",
+    "mais_procurados": true
+  },
+  {
+    "nome": "Moletom Puma Power Colorblock",
+    "preço": 349.99,
+    "sku": "PM-MO-009",
+    "src": "https://images.unsplash.com/photo-1520037303038-f9b8c2c77176?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "homens",
+    "mais_procurados": true
+  },
+  {
+    "nome": "Tênis Nike Air Force 1 '07",
+    "preço": 699.99,
+    "sku": "NK-TN-010",
+    "src": "https://images.unsplash.com/photo-1550399105-095a56d98e55?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "calçados",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Moletom Adidas Essentials",
+    "preço": 299.99,
+    "sku": "AD-MO-011",
+    "src": "https://images.unsplash.com/photo-1596758622170-0708f51a42f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "mulheres",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Top Esportivo Puma Strong",
+    "preço": 119.99,
+    "sku": "PM-TP-012",
+    "src": "https://images.unsplash.com/photo-1582298705031-155a30e84b8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "esporte",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Boné Nike H86 Futura",
+    "preço": 89.99,
+    "sku": "NK-BN-013",
+    "src": "https://images.unsplash.com/photo-1525997230230-b3b3a3c9e64e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "homens",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Calça Adidas Track Pants Adicolor",
+    "preço": 399.99,
+    "sku": "AD-CA-014",
+    "src": "https://images.unsplash.com/photo-1627958639535-c3f25c27f311?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "mulheres",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Tênis Puma RS-X3",
+    "preço": 599.99,
+    "sku": "PM-TN-015",
+    "src": "https://images.unsplash.com/photo-1580224163013-1768c67d34a4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "calçados",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Bermuda Nike Tech Fleece",
+    "preço": 349.99,
+    "sku": "NK-BE-016",
+    "src": "https://images.unsplash.com/photo-1622384953372-e1925b41d2e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "homens",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Casaco Adidas Firebird Primeblue",
+    "preço": 449.99,
+    "sku": "AD-CC-017",
+    "src": "https://images.unsplash.com/photo-1580196856515-388f7b3a992a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "esporte",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Regata Puma Studio",
+    "preço": 99.99,
+    "sku": "PM-RG-018",
+    "src": "https://images.unsplash.com/photo-1616788574971-c0a6b7d19c3c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "mulheres",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Meia Nike Everyday Cotton",
+    "preço": 69.99,
+    "sku": "NK-ME-019",
+    "src": "https://images.unsplash.com/photo-1582298705031-155a30e84b8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "homens",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Chinelo Adidas Adilette Comfort",
+    "preço": 159.99,
+    "sku": "AD-CH-020",
+    "src": "https://images.unsplash.com/photo-1549887754-073f918e98e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "calçados",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Tênis Puma Suede Classic XXI",
+    "preço": 499.99,
+    "sku": "PM-TN-021",
+    "src": "https://images.unsplash.com/photo-1606558230588-444f6f8742b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "calçados",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Camisa de Time Nike PSG Home",
+    "preço": 399.99,
+    "sku": "NK-CM-022",
+    "src": "https://images.unsplash.com/photo-1563299797-15d78709f191?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "esporte",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Vestido Adidas Adicolor",
+    "preço": 299.99,
+    "sku": "AD-VT-023",
+    "src": "https://images.unsplash.com/photo-1627409252579-2d2c1c6e1e69?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "mulheres",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Pochete Puma Plus II",
+    "preço": 119.99,
+    "sku": "PM-PC-024",
+    "src": "https://images.unsplash.com/photo-1611385419999-52d3c94d0e65?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "homens",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Tênis Nike Metcon 7",
+    "preço": 849.99,
+    "sku": "NK-TN-025",
+    "src": "https://images.unsplash.com/photo-1511216124505-1a815a5196d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "calçados",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Calça de Treino Adidas Aeroready",
+    "preço": 279.99,
+    "sku": "AD-CT-026",
+    "src": "https://images.unsplash.com/photo-1549405707-6a1005b6b8b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "esporte",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Shorts Saia Puma Active",
+    "preço": 179.99,
+    "sku": "PM-SS-027",
+    "src": "https://images.unsplash.com/photo-1627958639535-c3f25c27f311?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "mulheres",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Óculos de Sol Nike Rabid",
+    "preço": 499.99,
+    "sku": "NK-OC-028",
+    "src": "https://images.unsplash.com/photo-1572979204068-d0f110c7e2f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "homens",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Jaqueta Corta-Vento Adidas",
+    "preço": 399.99,
+    "sku": "AD-CV-029",
+    "src": "https://images.unsplash.com/photo-1582298705031-155a30e84b8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "esporte",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Sandália Puma Cool Cat",
+    "preço": 199.99,
+    "sku": "PM-SD-030",
+    "src": "https://images.unsplash.com/photo-1542840656-749e7b2f0a14?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "calçados",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Camiseta Nike Dry Fit Legend",
+    "preço": 119.99,
+    "sku": "NK-CS-031",
+    "src": "https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "esporte",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Moletom com Capuz Adidas",
+    "preço": 349.99,
+    "sku": "AD-MO-032",
+    "src": "https://images.unsplash.com/photo-1596758622170-0708f51a42f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "mulheres",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Tênis Puma Mayze",
+    "preço": 699.99,
+    "sku": "PM-TN-033",
+    "src": "https://images.unsplash.com/photo-1596759089065-27a96a30c510?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "calçados",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Calça Jogger Nike Sportswear",
+    "preço": 299.99,
+    "sku": "NK-CJ-034",
+    "src": "https://images.unsplash.com/photo-1520037303038-f9b8c2c77176?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "homens",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Camiseta de Gola V Adidas",
+    "preço": 99.99,
+    "sku": "AD-CV-035",
+    "src": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "homens",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Jaqueta Puma Iconic T7",
+    "preço": 429.99,
+    "sku": "PM-JQ-036",
+    "src": "https://images.unsplash.com/photo-1622384953372-e1925b41d2e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "mulheres",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Tênis Nike Revolution 6",
+    "preço": 349.99,
+    "sku": "NK-TN-037",
+    "src": "https://images.unsplash.com/photo-1580224163013-1768c67d34a4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "calçados",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Shorts Adidas Essentials Chelsea",
+    "preço": 179.99,
+    "sku": "AD-SH-038",
+    "src": "https://images.unsplash.com/photo-1549887754-073f918e98e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "homens",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Corta Vento Puma",
+    "preço": 349.99,
+    "sku": "PM-CV-039",
+    "src": "https://images.unsplash.com/photo-1521572178392-e4d6d6b5e0f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "esporte",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Saia Tênis Nike Court Victory",
+    "preço": 249.99,
+    "sku": "NK-ST-040",
+    "src": "https://images.unsplash.com/photo-1550399105-095a56d98e55?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "mulheres",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Mochila Adidas Classic",
+    "preço": 199.99,
+    "sku": "AD-MC-041",
+    "src": "https://images.unsplash.com/photo-1611385419999-52d3c94d0e65?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "acessórios",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Sutiã Esportivo Puma Mid Impact",
+    "preço": 149.99,
+    "sku": "PM-SE-042",
+    "src": "https://images.unsplash.com/photo-1627409252579-2d2c1c6e1e69?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "mulheres",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Tênis Nike Downshifter 12",
+    "preço": 399.99,
+    "sku": "NK-TN-043",
+    "src": "https://images.unsplash.com/photo-1606558230588-444f6f8742b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "calçados",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Jaqueta Adidas Tiro 23",
+    "preço": 429.99,
+    "sku": "AD-JT-044",
+    "src": "https://images.unsplash.com/photo-1580196856515-388f7b3a992a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "esporte",
+    "mais_procurados": false
+  },
+  {
+    "nome": "Camiseta Puma Teamgoal 23",
+    "preço": 89.99,
+    "sku": "PM-CT-045",
+    "src": "https://images.unsplash.com/photo-1549298828-566b61be4689?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "categoria": "homens",
+    "mais_procurados": false
+  }
+]

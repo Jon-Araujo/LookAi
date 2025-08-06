@@ -25,9 +25,10 @@ export default function Navbar() {
 
   return (
     <div
+      onClick={() => setIsTransparent(false)}
       className={`bg-white fixed top-0 left-0 z-50 w-full shadow-xl px-4 py-2 flex items-center justify-between transition-all duration-500 ${
         isTransparent ? 'opacity-75' : 'opacity-100'
-      } `}
+      }`}
     >
       <Link href={'/'}>
         <Image src={'/logo.png'} alt={''} width={100} height={30}></Image>
@@ -40,7 +41,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      <ul className='flex w-1/5 justify-between'>
+      <ul className="flex w-1/5 justify-between">
         <li>
           <Link href={'/mulheres'}>Mulheres</Link>
         </li>

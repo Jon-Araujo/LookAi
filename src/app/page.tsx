@@ -7,6 +7,13 @@ import Image from 'next/image';
 import ProductCard from '@/components/productCard';
 import Link from 'next/link';
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+
 export default function Home() {
   return (
     <div className="mt-28">
@@ -31,13 +38,10 @@ export default function Home() {
         </CarouselContent>
       </Carousel>
 
-      {/* Produtos mais procurados: */}
-      <ProductCard title="Produtos mais procurados" />
-
       {/* Categorias: */}
-      <p className="ml-12 text-2xl font-semibold">Categorias:</p>
-      <ul className="grid grid-cols-2 gap-12 mt-8 w-1/2 mx-auto">
-        <li className="relative aspect-square max-w-[360px] size-124 overflow-hidden rounded-xl group">
+      <p className="ml-12 mt-8 text-2xl font-semibold">Categorias:</p>
+      <ul className="grid grid-cols-4 gap-12 mt-8 w-1/2 mx-auto">
+        <li className="relative aspect-square max-w-[360px] size-56 shadow-xl overflow-hidden rounded-full group">
           <Link href="/produtos/homens">
             <Image
               src="/categories/homens.png"
@@ -50,7 +54,7 @@ export default function Home() {
             </div>
           </Link>
         </li>
-        <li className="relative aspect-square max-w-[360px] size-124 overflow-hidden rounded-xl group">
+        <li className="relative aspect-square max-w-[360px] size-56 shadow-xl overflow-hidden rounded-full group">
           <Link href="/produtos/calcados">
             <Image
               src="/categories/calcados.png"
@@ -63,7 +67,7 @@ export default function Home() {
             </div>
           </Link>
         </li>
-        <li className="relative aspect-square max-w-[360px] size-124 overflow-hidden rounded-xl group">
+        <li className="relative aspect-square max-w-[360px] size-56 shadow-xl overflow-hidden rounded-full group">
           <Link href="/produtos/esporte">
             <Image
               src="/categories/esporte.png"
@@ -76,7 +80,7 @@ export default function Home() {
             </div>
           </Link>
         </li>
-        <li className="relative aspect-square max-w-[360px] size-124 overflow-hidden rounded-xl group">
+        <li className="relative aspect-square max-w-[360px] size-56 shadow-xl overflow-hidden rounded-full group">
           <Link href="/produtos/mulheres">
             <Image
               src="/categories/mulheres.png"
@@ -90,6 +94,76 @@ export default function Home() {
           </Link>
         </li>
       </ul>
+
+      {/* Produtos mais procurados: */}
+      <ProductCard title="Produtos mais procurados" />
+
+      {/* Accordion de perguntas mais frequentes: */}
+      <Accordion type="single" collapsible className="w-4/5 mt-12 mx-auto" defaultValue="item-1">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>1. Por que os preços são tão baixos?</AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-4 text-balance">
+            <p>
+              Nós trabalhamos diretamente com fornecedores de confiança, com produtos de excelente
+              qualidade e sem intermediários. Isso nos permite oferecer preços mais acessíveis ao
+              cliente final. Nosso objetivo é democratizar a moda, oferecendo estilo e economia em
+              um só lugar.
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>2. Os produtos são de qualidade?</AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-4 text-balance">
+            <p>
+              Sim! Todos os nossos produtos são novos e com controle de qualidade. Trabalhamos com
+              fornecedores que já atuam no mercado com responsabilidade e possuem reconhecimento.
+              Você recebe exatamente o que vê nas fotos.
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>3. Por que a compra é finalizada pelo WhatsApp?</AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-4 text-balance">
+            <p>
+              Estamos em fase de expansão e, por isso, ainda não ativamos o sistema de checkout
+              automatizado no site. Mas você pode comprar com total segurança pelo WhatsApp, onde
+              nossa equipe está pronta para te atender, tirar dúvidas e finalizar seu pedido com
+              rapidez e atenção.
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-4">
+          <AccordionTrigger>4. É seguro finalizar a compra pelo WhatsApp?</AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-4 text-balance">
+            <p>
+              Sim! Nosso atendimento é feito por pessoas reais e treinadas, com CNPJ registrado e
+              histórico de clientes satisfeitos. No WhatsApp, você pode confirmar disponibilidade,
+              tirar dúvidas, receber fotos e ainda acompanhar o andamento do seu pedido em tempo
+              real.
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-5">
+          <AccordionTrigger>5. Como é feita a entrega dos pedidos?</AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-4 text-balance">
+            <p>
+              Enviamos para todo o Brasil via Correios ou transportadora, dependendo da sua região.
+              Assim que o pagamento for confirmado, você recebe um código de rastreio para
+              acompanhar seu pedido até a entrega. Tudo de forma transparente e segura.
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-6">
+          <AccordionTrigger>6. Posso trocar ou devolver um produto?</AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-4 text-balance">
+            <p>
+              Claro! Seguimos o Código de Defesa do Consumidor e garantimos seu direito de troca ou
+              devolução dentro do prazo legal. Se tiver qualquer problema, é só entrar em contato
+              com nossa equipe pelo WhatsApp que resolvemos tudo de forma prática e rápida.
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     </div>
   );
 }

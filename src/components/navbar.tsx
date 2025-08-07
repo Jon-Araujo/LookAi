@@ -4,11 +4,22 @@ import { Search, Heart, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger
+} from '@/components/ui/drawer';
+import { Button } from './ui/button';
+
 export default function Navbar() {
   const [isTransparent, setIsTransparent] = useState<boolean>(false);
 
   useEffect(() => {
-    console.log('oi');
     const handleScroll = () => {
       const scroll = window.scrollY;
       const limit = window.innerHeight / 3;
@@ -22,6 +33,10 @@ export default function Navbar() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const SendToWpp:()=>void = () => {
+    console.log('send to wpp')
+  }
 
   return (
     <div
@@ -57,8 +72,65 @@ export default function Navbar() {
       </ul>
 
       <div className="flex justify-between w-[5%] mr-4">
-        <Heart />
-        <ShoppingBag />
+        {/* SideBar de Favoritos: */}
+        <Drawer direction="right">
+          <DrawerTrigger className="hover:cursor-pointer">
+            <Heart />
+          </DrawerTrigger>
+          <DrawerContent>
+            <DrawerHeader>
+              <DrawerTitle className="text-lg font-semibold flex justify-between items-center text-[#109deb]">
+                Seus Favoritos ❤️{' '}
+                <DrawerClose>
+                  <Button variant="outline" className="rounded-full p-3 hover:cursor-pointer">
+                    X
+                  </Button>
+                </DrawerClose>
+              </DrawerTitle>
+              <DrawerDescription>Sua lista de produtos favoritos aqui:</DrawerDescription>
+            </DrawerHeader>
+            <DrawerFooter>
+              <DrawerClose>
+                <Button variant="outline" className="hover:cursor-pointer w-3/5 text-[#109deb]">
+                  Fechar
+                </Button>
+              </DrawerClose>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
+
+        {/* SideBar da Sacola de compras: */}
+        <Drawer direction="right">
+          <DrawerTrigger className="hover:cursor-pointer">
+            <ShoppingBag />
+          </DrawerTrigger>
+          <DrawerContent>
+            <DrawerHeader>
+              <DrawerTitle className="text-lg font-semibold flex justify-between items-center text-[#109deb]">
+                Sacola de Compras 🛍️{' '}
+                <DrawerClose>
+                  <Button variant="outline" className="rounded-full p-3 hover:cursor-pointer">
+                    X
+                  </Button>
+                </DrawerClose>
+              </DrawerTitle>
+              <DrawerDescription>Finalize a compra dos produtos escolhidos aqui:</DrawerDescription>
+            </DrawerHeader>
+            <DrawerFooter>
+              <Button
+                className="hover:cursor-pointer w-3/5 mx-auto bg-[#109deb]"
+                onClick={SendToWpp}
+              >
+                Finalizar Compra
+              </Button>
+              <DrawerClose>
+                <Button variant="outline" className="hover:cursor-pointer w-3/5 text-[#109deb]">
+                  Continuar comprando
+                </Button>
+              </DrawerClose>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
       </div>
     </div>
   );

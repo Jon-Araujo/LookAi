@@ -13,8 +13,24 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  
+  const [mobile, setMobile] = useState<boolean>(false);
+
+  useEffect(() => {
+    const isMobile = (): boolean => {
+      return window.innerWidth <= 900;
+    };
+       const updateMobile = () => setMobile(isMobile());
+  
+       updateMobile();
+       window.addEventListener('resize', updateMobile);
+  
+       return () => window.removeEventListener('resize', updateMobile);
+     }, []);
+
   return (
     <div className="mt-28">
       {/* Carrosel de banners: */}
@@ -26,22 +42,41 @@ export default function Home() {
         ]}
       >
         <CarouselContent>
-          <CarouselItem className="relative h-96 w-full">
-            <Image src="/banners/nike1.jpg" alt="Nike Banner" fill className="object-cover" />
+          <CarouselItem className={`relative w-full ${mobile ? 'h-56' : 'h-96'}`}>
+            <Image
+              src="/banners/nike1.jpg"
+              alt="Nike Banner"
+              fill
+              className={`${mobile ? 'object-fill' : 'object-cover'}`}
+            />
           </CarouselItem>
-          <CarouselItem className="relative h-96 w-full">
-            <Image src="/banners/adidas1.webp" alt="Nike Banner" fill className="object-cover" />
+          <CarouselItem className={`relative w-full ${mobile ? 'h-56' : 'h-96'}`}>
+            <Image
+              src="/banners/adidas1.webp"
+              alt="Nike Banner"
+              fill
+              className={`${mobile ? 'object-fill' : 'object-cover'}`}
+            />
           </CarouselItem>
-          <CarouselItem className="relative h-96 w-full">
-            <Image src="/banners/puma1.webp" alt="Nike Banner" fill className="object-cover" />
+          <CarouselItem className={`relative w-full ${mobile ? 'h-56' : 'h-96'}`}>
+            <Image
+              src="/banners/puma1.webp"
+              alt="Nike Banner"
+              fill
+              className={`${mobile ? 'object-fill' : 'object-cover'}`}
+            />
           </CarouselItem>
         </CarouselContent>
       </Carousel>
 
       {/* Categorias: */}
       <p className="ml-12 mt-8 text-2xl font-semibold">Categorias:</p>
-      <ul className="grid grid-cols-4 gap-12 mt-8 w-1/2 mx-auto">
-        <li className="relative aspect-square max-w-[360px] size-56 shadow-xl overflow-hidden rounded-full group">
+      <ul
+        className={`grid ${
+          mobile ? 'grid-cols-2 w-[90%] gap-6' : 'grid-cols-4 w-1/2 hover:w-3/5'
+        } mt-8 mx-auto transform-all duration-300`}
+      >
+        <li className={`relative ${mobile?'size-48':'size-56'} shadow-xl overflow-hidden rounded-full group`}>
           <Link href="/produtos/homens">
             <Image
               src="/categories/homens.png"
@@ -54,7 +89,7 @@ export default function Home() {
             </div>
           </Link>
         </li>
-        <li className="relative aspect-square max-w-[360px] size-56 shadow-xl overflow-hidden rounded-full group">
+        <li className={`relative ${mobile?'size-48':'size-56'} shadow-xl overflow-hidden rounded-full group`}>
           <Link href="/produtos/calcados">
             <Image
               src="/categories/calcados.png"
@@ -67,7 +102,7 @@ export default function Home() {
             </div>
           </Link>
         </li>
-        <li className="relative aspect-square max-w-[360px] size-56 shadow-xl overflow-hidden rounded-full group">
+        <li className={`relative ${mobile?'size-48':'size-56'} shadow-xl overflow-hidden rounded-full group`}>
           <Link href="/produtos/esporte">
             <Image
               src="/categories/esporte.png"
@@ -80,7 +115,7 @@ export default function Home() {
             </div>
           </Link>
         </li>
-        <li className="relative aspect-square max-w-[360px] size-56 shadow-xl overflow-hidden rounded-full group">
+        <li className={`relative ${mobile?'size-48':'size-56'} shadow-xl overflow-hidden rounded-full group`}>
           <Link href="/produtos/mulheres">
             <Image
               src="/categories/mulheres.png"
@@ -96,7 +131,7 @@ export default function Home() {
       </ul>
 
       {/* Produtos mais procurados: */}
-      <ProductCard title="Produtos mais procurados" />
+      <ProductCard title="Produtos mais procurados" isMostWanted={true} />
 
       {/* Accordion de perguntas mais frequentes: */}
       <Accordion type="single" collapsible className="w-4/5 mt-12 mx-auto" defaultValue="item-1">

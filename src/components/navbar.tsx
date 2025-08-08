@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { Search, Heart, ShoppingBag } from 'lucide-react';
+import { Search, Heart, ShoppingBag, Menu } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -12,12 +12,21 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
-  DrawerTrigger
+  DrawerTrigger,
 } from '@/components/ui/drawer';
 import { Button } from './ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 export default function Navbar() {
   const [isTransparent, setIsTransparent] = useState<boolean>(false);
+  const [mobile, setMobile] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,9 +43,21 @@ export default function Navbar() {
     };
   }, []);
 
-  const SendToWpp:()=>void = () => {
-    console.log('send to wpp')
-  }
+   useEffect(() => {
+    const isMobile = (): boolean => {
+      return window.innerWidth <= 900;
+    };
+     const updateMobile = () => setMobile(isMobile());
+
+     updateMobile();
+     window.addEventListener('resize', updateMobile);
+
+     return () => window.removeEventListener('resize', updateMobile);
+   }, []);
+
+  const SendToWpp: () => void = () => {
+    console.log('send to wpp');
+  };
 
   return (
     <div
@@ -49,29 +70,32 @@ export default function Navbar() {
         <Image src={'/logo.png'} alt={''} width={100} height={30}></Image>
       </Link>
 
-      <div className="border-2 p-2 rounded-lg w-1/3 flex justify-between">
+      <div
+        className={`border-2 p-2 rounded-lg flex justify-between ${mobile ? 'w-[45%]' : 'w-1/3'}`}
+      >
         <input type="text" placeholder="Pesquise aqui..." className="w-full focus:outline-none" />
         <button className="cursor-pointer">
           <Search />
         </button>
       </div>
+      {mobile ? null : (
+        <ul className="flex w-1/5 justify-between">
+          <li>
+            <Link href={'/produtos/mulheres'}>Mulheres</Link>
+          </li>
+          <li>
+            <Link href={'/produtos/homens'}>Homens</Link>
+          </li>
+          <li>
+            <Link href={'/produtos/esporte'}>Esporte</Link>
+          </li>
+          <li>
+            <Link href={'/produtos/calcados'}>Calçados</Link>
+          </li>
+        </ul>
+      )}
 
-      <ul className="flex w-1/5 justify-between">
-        <li>
-          <Link href={'/mulheres'}>Mulheres</Link>
-        </li>
-        <li>
-          <Link href={'/homens'}>Homens</Link>
-        </li>
-        <li>
-          <Link href={'/esporte'}>Esporte</Link>
-        </li>
-        <li>
-          <Link href={'/calcados'}>Calçados</Link>
-        </li>
-      </ul>
-
-      <div className="flex justify-between w-[5%] mr-4">
+      <div className={`flex justify-between ${mobile ? 'w-1/4' : 'w-[5%] mr-4'}`}>
         {/* SideBar de Favoritos: */}
         <Drawer direction="right">
           <DrawerTrigger className="hover:cursor-pointer">
@@ -81,7 +105,7 @@ export default function Navbar() {
             <DrawerHeader>
               <DrawerTitle className="text-lg font-semibold flex justify-between items-center text-[#109deb]">
                 Seus Favoritos ❤️{' '}
-                <DrawerClose>
+                <DrawerClose asChild>
                   <Button variant="outline" className="rounded-full p-3 hover:cursor-pointer">
                     X
                   </Button>
@@ -90,9 +114,12 @@ export default function Navbar() {
               <DrawerDescription>Sua lista de produtos favoritos aqui:</DrawerDescription>
             </DrawerHeader>
             <DrawerFooter>
-              <DrawerClose>
-                <Button variant="outline" className="hover:cursor-pointer w-3/5 text-[#109deb]">
-                  Fechar
+              <DrawerClose asChild>
+                <Button
+                  variant="outline"
+                  className="hover:cursor-pointer w-3/5 text-[#109deb] mx-auto"
+                >
+                  Adicionar Mais Produtos
                 </Button>
               </DrawerClose>
             </DrawerFooter>
@@ -108,7 +135,7 @@ export default function Navbar() {
             <DrawerHeader>
               <DrawerTitle className="text-lg font-semibold flex justify-between items-center text-[#109deb]">
                 Sacola de Compras 🛍️{' '}
-                <DrawerClose>
+                <DrawerClose asChild>
                   <Button variant="outline" className="rounded-full p-3 hover:cursor-pointer">
                     X
                   </Button>
@@ -123,14 +150,42 @@ export default function Navbar() {
               >
                 Finalizar Compra
               </Button>
-              <DrawerClose>
-                <Button variant="outline" className="hover:cursor-pointer w-3/5 text-[#109deb]">
+              <DrawerClose asChild>
+                <Button
+                  variant="outline"
+                  className="hover:cursor-pointer w-3/5 text-[#109deb] mx-auto"
+                >
                   Continuar comprando
                 </Button>
               </DrawerClose>
             </DrawerFooter>
           </DrawerContent>
         </Drawer>
+
+        {/* Menu Hamburguer para mobile: */}
+        {mobile ? (
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Menu />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuLabel>Categorias</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>
+                <Link href={'/produtos/mulheres'}>Mulheres</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href={'/produtos/homens'}>Homens</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href={'/produtos/esporte'}>Esporte</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href={'/produtos/calcados'}>Calçados</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        ) : null}
       </div>
     </div>
   );

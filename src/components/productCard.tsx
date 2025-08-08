@@ -1,4 +1,5 @@
-import Link from 'next/link';
+'use client';
+
 import {
   Carousel,
   CarouselContent,
@@ -9,26 +10,47 @@ import {
 import Image from 'next/image';
 
 import bdMockado from '@/bd/bdMockado.json';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Heart, ShoppingBag } from 'lucide-react';
 
 type ProductCardProps = {
-  title: string;
+  title?: string;
+  isMostWanted: boolean;
+  category?: string;
 };
 
-export default function ProductCard({ title }: ProductCardProps) {
-  return (
-    <div className="my-6">
-      <h1 className="ml-12 text-2xl font-semibold">{title}:</h1>
-      <Carousel className="w-[80%] mx-auto">
-        <CarouselContent className="flex w-4/5 mx-auto mt-8 -ml-4 py-2">
-          {bdMockado.map((product, index) => {
-            
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            const [imgSrc, setImgSrc] = useState(product.src);
-            if (title === 'Produtos mais procurados') {
+export default function ProductCard({ title, isMostWanted, category }: ProductCardProps) {
+    const [mobile, setMobile] = useState<boolean>(false);
+    
+      useEffect(() => {
+        const isMobile = (): boolean => {
+          return window.innerWidth <= 900;
+        };
+           const updateMobile = () => setMobile(isMobile());
+      
+           updateMobile();
+           window.addEventListener('resize', updateMobile);
+      
+           return () => window.removeEventListener('resize', updateMobile);
+         }, []);
+
+  if (isMostWanted) {
+    return (
+      <div className="my-6">
+        <h1 className="ml-12 text-2xl font-semibold">{title}:</h1>
+        <Carousel className={`w-[80%] mx-auto ${mobile?'h-96':''}`}>
+          <CarouselContent className="flex w-4/5 mx-auto mt-8 -ml-4 py-2">
+            {bdMockado.map((product, index) => {
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              const [imgSrc, setImgSrc] = useState(product.src);
               if (product.mais_procurados) {
                 return (
-                  <CarouselItem className="relative group overflow-hidden basis-1/3" key={index}>
+                  <CarouselItem
+                    className={`relative group overflow-hidden ${
+                      mobile ? 'h-88 basis-1/1' : 'basis-1/3'
+                    }`}
+                    key={index}
+                  >
                     <Image
                       src={imgSrc}
                       onError={() => setImgSrc('/products/none.webp')}
@@ -45,30 +67,42 @@ export default function ProductCard({ title }: ProductCardProps) {
                   </CarouselItem>
                 );
               }
-            } else {
-                return (
-                  <CarouselItem className="relative group overflow-hidden" key={index}>
-                    <Image
-                      src={imgSrc}
-                      onError={() => setImgSrc('/products/none.webp')}
-                      alt={product.nome}
-                      width={250}
-                      height={250}
-                      className="object-cover w-full h-full rounded-lg shadow-lg"
-                    />
-
-                    <div className="absolute bottom-0 left-0 right-0 rounded-b-lg bg-black bg-opacity-70 text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <p className="text-sm font-semibold">{product.nome}</p>
-                      <p className="text-sm">R$ {product.preço}</p>
-                    </div>
-                  </CarouselItem>
-                );
-            }
+            })}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </div>
+    );
+  } else {
+    return (
+      <ul className={`grid gap-8 ${mobile ? 'grid-cols-1 mt-4' : 'grid-cols-4 mt-6'}`}>
+        {bdMockado
+          .filter((product) => product.categoria === category)
+          .map((product, index) => {
+            // eslint-disable-next-line react-hooks/rules-of-hooks
+            const [imgSrc, setImgSrc] = useState(product.src);
+            return (
+              <li key={index} className=" p-4 shadow-md border rounded-xl relative h-84 group">
+                <Image
+                  src={imgSrc}
+                  onError={() => setImgSrc('/products/none.webp')}
+                  fill
+                  alt=""
+                  className="size-56 object-fill rounded-xl"
+                />
+                <div className="h-24 flex flex-col justify-around rounded-b-lg absolute bottom-0 left-0 right-0 bg-black opacity-40 text-white p-2">
+                  <p className="text-xl font-bold">{product.nome}</p>
+                  <p className="text-lg">R$ {product.preço.toFixed(2)}</p>
+                </div>
+                <div className="flex flex-col items-end">
+                  <Heart className="opacity-65 mb-2 hover:cursor-pointer" />
+                  <ShoppingBag className="opacity-65 hover:cursor-pointer" />
+                </div>
+              </li>
+            );
           })}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
-    </div>
-  );
+      </ul>
+    );
+  }
 }

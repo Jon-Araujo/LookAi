@@ -7,7 +7,7 @@ interface Props {
   };
 }
 
-export default function ProdutosCategoriaPage({ params }: Props) {
+export default async function ProdutosCategoriaPage({ params }: Props) {
   const { categoria } = params;
 
   const categoriasValidas = ['homens', 'mulheres', 'esporte', 'calcados'];

@@ -44,7 +44,7 @@ export default function Footer() {
             <p className="text-sm">contato@lookai.com.br</p>
             <p className="text-sm mt-1">+55 (11) 99999-9999</p>
             <div className="flex gap-4 mt-4">
-              <a href="#">
+              {/* <a href="#">
                 <img src="/icons/facebook.svg" alt="Facebook" className="w-5 h-5" />
               </a>
               <a href="#">
@@ -52,7 +52,7 @@ export default function Footer() {
               </a>
               <a href="#">
                 <img src="/icons/twitter.svg" alt="Twitter" className="w-5 h-5" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

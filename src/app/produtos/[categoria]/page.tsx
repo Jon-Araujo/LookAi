@@ -1,13 +1,7 @@
 import { notFound } from 'next/navigation';
 import ProductCard from '@/components/productCard';
 
-interface Props {
-  params: {
-    categoria: string;
-  };
-}
-
-export default async function ProdutosCategoriaPage({ params }: Props) {
+export default async function ProdutosCategoriaPage({ params }: { params: { categoria: string } }) {
   const { categoria } = params;
 
   const categoriasValidas = ['homens', 'mulheres', 'esporte', 'calcados'];

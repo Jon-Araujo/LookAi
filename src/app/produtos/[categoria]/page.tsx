@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation';
 import ProductCard from '@/components/productCard';
 
-export default async function ProdutosCategoriaPage({ params }: { params: { categoria: string } }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default async function ProdutosCategoriaPage({ params }: any) {
   const { categoria } = params;
 
   const categoriasValidas = ['homens', 'mulheres', 'esporte', 'calcados'];

@@ -23,10 +23,20 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import FavoriteCard from './favoriteCard';
 
 export default function Navbar() {
   const [isTransparent, setIsTransparent] = useState<boolean>(false);
   const [mobile, setMobile] = useState<boolean>(false);
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [controller, setController] = useState<boolean>(false);
+
+  useEffect(() => {
+    const storage = localStorage.getItem('favorites');
+    if (storage) {
+      setFavorites(JSON.parse(storage));
+    }
+  }, [controller]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,17 +53,17 @@ export default function Navbar() {
     };
   }, []);
 
-   useEffect(() => {
+  useEffect(() => {
     const isMobile = (): boolean => {
       return window.innerWidth <= 900;
     };
-     const updateMobile = () => setMobile(isMobile());
+    const updateMobile = () => setMobile(isMobile());
 
-     updateMobile();
-     window.addEventListener('resize', updateMobile);
+    updateMobile();
+    window.addEventListener('resize', updateMobile);
 
-     return () => window.removeEventListener('resize', updateMobile);
-   }, []);
+    return () => window.removeEventListener('resize', updateMobile);
+  }, []);
 
   const SendToWpp: () => void = () => {
     console.log('send to wpp');
@@ -98,7 +108,11 @@ export default function Navbar() {
       <div className={`flex justify-between ${mobile ? 'w-1/4' : 'w-[5%] mr-4'}`}>
         {/* SideBar de Favoritos: */}
         <Drawer direction="right">
-          <DrawerTrigger className="hover:cursor-pointer">
+          <DrawerTrigger
+            className="hover:cursor-pointer"
+            id="favoriteSidebar"
+            onClick={() => setController(!controller)}
+          >
             <Heart />
           </DrawerTrigger>
           <DrawerContent>
@@ -113,6 +127,11 @@ export default function Navbar() {
               </DrawerTitle>
               <DrawerDescription>Sua lista de produtos favoritos aqui:</DrawerDescription>
             </DrawerHeader>
+            <div>
+              {favorites.map((cod, index) => (
+                <FavoriteCard sku={cod} key={index} />
+              ))}
+            </div>
             <DrawerFooter>
               <DrawerClose asChild>
                 <Button
